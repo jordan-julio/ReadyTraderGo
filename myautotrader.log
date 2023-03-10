@@ -8346,3 +8346,1380 @@ Traceback (most recent call last):
 ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
 2023-03-09 15:09:06,747 [INFO   ] [APP] closing event loop
 2023-03-09 15:09:06,747 [INFO   ] [RECEIVER] connection lost
+2023-03-10 20:42:03,795 [INFO   ] [APP] myautotrader started with arguments={rtg.py, run, myautotrader.py}
+2023-03-10 20:42:03,795 [INFO   ] [APP] configuration={"Execution":{"Host":"127.0.0.1","Port":12345},"Information":{"Type":"mmap","Name":"info.dat"},"TeamName":"TraderTwo","Secret":"secret"}
+2023-03-10 20:42:03,808 [INFO   ] [CONNECTION] fd=984 connection established: peer=127.0.0.1:12345
+2023-03-10 20:42:08,850 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 1
+2023-03-10 20:42:08,850 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 1
+2023-03-10 20:42:09,068 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 2
+2023-03-10 20:42:09,069 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 2
+2023-03-10 20:42:09,069 [INFO   ] [TRADER] order 1 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:09,069 [INFO   ] [TRADER] order 2 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:09,364 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 3
+2023-03-10 20:42:09,364 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 3
+2023-03-10 20:42:09,598 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 4
+2023-03-10 20:42:09,598 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 4
+2023-03-10 20:42:09,647 [INFO   ] [TRADER] received order filled for order 2 with price 147100 and volume 10
+2023-03-10 20:42:09,647 [INFO   ] [TRADER] order 2 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:09,647 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 2
+2023-03-10 20:42:09,648 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:09,648 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] ask price 0: 147100, volume: 10
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] ask price 1: 147600, volume: 111
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:09,649 [INFO   ] [TRADER] received hedge filled for order 3 with average price 147100 and volume 10
+2023-03-10 20:42:09,807 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 5
+2023-03-10 20:42:09,808 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 5
+2023-03-10 20:42:09,808 [INFO   ] [TRADER] order 1 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:09,808 [INFO   ] [TRADER] order 4 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:09,809 [INFO   ] [TRADER] order 5 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:09,888 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 2
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] ask price 0: 147100, volume: 10
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:09,889 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:09,890 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:09,890 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:09,890 [INFO   ] [TRADER] received order filled for order 4 with price 147100 and volume 1
+2023-03-10 20:42:09,890 [INFO   ] [TRADER] order 4 status update: filled volume=1, remaining volume=9, status flags=-15
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 3
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] bid price 0: 147100, volume: 1
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:09,891 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:09,892 [INFO   ] [TRADER] received hedge filled for order 6 with average price 147100 and volume 1
+2023-03-10 20:42:10,120 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 6
+2023-03-10 20:42:10,120 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 6
+2023-03-10 20:42:10,122 [INFO   ] [TRADER] order 5 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:10,122 [INFO   ] [TRADER] order 7 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:10,357 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 7
+2023-03-10 20:42:10,357 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 7
+2023-03-10 20:42:10,358 [INFO   ] [TRADER] order 7 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:10,358 [INFO   ] [TRADER] order 8 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:10,574 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 8
+2023-03-10 20:42:10,574 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 8
+2023-03-10 20:42:10,904 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 9
+2023-03-10 20:42:10,905 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 9
+2023-03-10 20:42:10,905 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 3
+2023-03-10 20:42:10,905 [INFO   ] [TRADER] bid price 0: 147000, volume: 900
+2023-03-10 20:42:10,905 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:10,906 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:10,907 [INFO   ] [TRADER] order 4 status update: filled volume=1, remaining volume=0, status flags=-15
+2023-03-10 20:42:10,907 [INFO   ] [TRADER] order 9 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:10,970 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 4
+2023-03-10 20:42:10,970 [INFO   ] [TRADER] bid price 0: 146900, volume: 500
+2023-03-10 20:42:10,970 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:10,971 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:11,152 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 10
+2023-03-10 20:42:11,152 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 10
+2023-03-10 20:42:11,339 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 11
+2023-03-10 20:42:11,339 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 11
+2023-03-10 20:42:11,339 [INFO   ] [TRADER] received order filled for order 9 with price 147000 and volume 10
+2023-03-10 20:42:11,340 [INFO   ] [TRADER] order 9 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:11,341 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 4
+2023-03-10 20:42:11,341 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:11,341 [INFO   ] [TRADER] bid price 1: 146400, volume: 61
+2023-03-10 20:42:11,341 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:11,341 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] order 10 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:11,342 [INFO   ] [TRADER] order 8 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:11,343 [INFO   ] [TRADER] order 11 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:11,343 [INFO   ] [TRADER] received hedge filled for order 12 with average price 146800 and volume 10
+2023-03-10 20:42:11,559 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 12
+2023-03-10 20:42:11,560 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 12
+2023-03-10 20:42:11,560 [INFO   ] [TRADER] order 10 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:11,560 [INFO   ] [TRADER] order 13 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:11,560 [INFO   ] [TRADER] order 11 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:11,561 [INFO   ] [TRADER] order 14 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:11,844 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 13
+2023-03-10 20:42:11,844 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 13
+2023-03-10 20:42:12,096 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 14
+2023-03-10 20:42:12,096 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 14
+2023-03-10 20:42:12,101 [INFO   ] [TRADER] order 13 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:12,101 [INFO   ] [TRADER] order 15 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:12,254 [INFO   ] [TRADER] received order filled for order 14 with price 146900 and volume 10
+2023-03-10 20:42:12,254 [INFO   ] [TRADER] order 14 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 5
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] ask price 0: 146900, volume: 10
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] ask price 1: 147500, volume: 83
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:12,255 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:12,256 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:12,256 [INFO   ] [TRADER] received hedge filled for order 16 with average price 147000 and volume 10
+2023-03-10 20:42:12,367 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 15
+2023-03-10 20:42:12,367 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 15
+2023-03-10 20:42:12,367 [INFO   ] [TRADER] order 15 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:12,367 [INFO   ] [TRADER] order 17 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:12,368 [INFO   ] [TRADER] order 18 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:12,525 [INFO   ] [TRADER] received order filled for order 17 with price 146900 and volume 10
+2023-03-10 20:42:12,526 [INFO   ] [TRADER] order 17 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:12,526 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 6
+2023-03-10 20:42:12,526 [INFO   ] [TRADER] bid price 0: 146900, volume: 10
+2023-03-10 20:42:12,526 [INFO   ] [TRADER] bid price 1: 146300, volume: 7
+2023-03-10 20:42:12,527 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:12,527 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:12,527 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:12,527 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:12,528 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:12,528 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:12,528 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:12,528 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:12,528 [INFO   ] [TRADER] received hedge filled for order 19 with average price 146800 and volume 10
+2023-03-10 20:42:12,571 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 16
+2023-03-10 20:42:12,571 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 16
+2023-03-10 20:42:12,571 [INFO   ] [TRADER] order 20 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:12,571 [INFO   ] [TRADER] order 18 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:12,572 [INFO   ] [TRADER] order 21 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:12,886 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 17
+2023-03-10 20:42:12,886 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 17
+2023-03-10 20:42:13,075 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 18
+2023-03-10 20:42:13,075 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 18
+2023-03-10 20:42:13,359 [INFO   ] [TRADER] received order filled for order 20 with price 146700 and volume 10
+2023-03-10 20:42:13,361 [INFO   ] [TRADER] order 20 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:13,361 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 19
+2023-03-10 20:42:13,361 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 19
+2023-03-10 20:42:13,361 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 7
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] bid price 0: 146700, volume: 10
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] bid price 1: 146300, volume: 9
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:13,362 [INFO   ] [TRADER] received hedge filled for order 22 with average price 146800 and volume 10
+2023-03-10 20:42:13,617 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 20
+2023-03-10 20:42:13,617 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 20
+2023-03-10 20:42:13,618 [INFO   ] [TRADER] order 23 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:13,618 [INFO   ] [TRADER] order 21 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:13,618 [INFO   ] [TRADER] order 24 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:13,860 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 21
+2023-03-10 20:42:13,860 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 21
+2023-03-10 20:42:14,031 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 5
+2023-03-10 20:42:14,031 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:14,031 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] ask price 0: 146800, volume: 1000
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:14,032 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:14,094 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 22
+2023-03-10 20:42:14,094 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 22
+2023-03-10 20:42:14,094 [INFO   ] [TRADER] order 23 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,095 [INFO   ] [TRADER] order 25 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:14,095 [INFO   ] [TRADER] order 24 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,095 [INFO   ] [TRADER] order 26 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:14,376 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 23
+2023-03-10 20:42:14,376 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 23
+2023-03-10 20:42:14,377 [INFO   ] [TRADER] order 25 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,377 [WARNING] [TRADER] error with order 27: order rejected: in cross with an existing order
+2023-03-10 20:42:14,377 [INFO   ] [TRADER] order 27 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,377 [INFO   ] [TRADER] order 26 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,378 [INFO   ] [TRADER] order 28 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:14,611 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 24
+2023-03-10 20:42:14,611 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 24
+2023-03-10 20:42:14,618 [INFO   ] [TRADER] order 29 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:14,619 [INFO   ] [TRADER] order 28 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,619 [INFO   ] [TRADER] received order filled for order 30 with price 147000 and volume 10
+2023-03-10 20:42:14,619 [INFO   ] [TRADER] order 30 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 8
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:14,620 [INFO   ] [TRADER] received hedge filled for order 31 with average price 147000 and volume 10
+2023-03-10 20:42:14,859 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 25
+2023-03-10 20:42:14,859 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 25
+2023-03-10 20:42:14,867 [INFO   ] [TRADER] order 29 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:14,869 [INFO   ] [TRADER] order 32 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:14,931 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 6
+2023-03-10 20:42:14,931 [INFO   ] [TRADER] bid price 0: 146800, volume: 10
+2023-03-10 20:42:14,931 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:14,933 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,078 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 26
+2023-03-10 20:42:15,078 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 26
+2023-03-10 20:42:15,088 [INFO   ] [TRADER] order 32 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:15,088 [INFO   ] [TRADER] order 33 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:15,088 [INFO   ] [TRADER] received order filled for order 34 with price 147000 and volume 10
+2023-03-10 20:42:15,089 [INFO   ] [TRADER] order 34 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:15,089 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 9
+2023-03-10 20:42:15,089 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,090 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,091 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,091 [INFO   ] [TRADER] received hedge filled for order 35 with average price 146700 and volume 10
+2023-03-10 20:42:15,302 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 27
+2023-03-10 20:42:15,303 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 27
+2023-03-10 20:42:15,303 [INFO   ] [TRADER] order 33 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:15,303 [INFO   ] [TRADER] order 36 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:15,303 [INFO   ] [TRADER] received order filled for order 37 with price 147000 and volume 10
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] order 37 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 10
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,304 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:15,305 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,305 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,305 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,305 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,305 [INFO   ] [TRADER] received hedge filled for order 38 with average price 146700 and volume 10
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 11
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] ask price 0: 147200, volume: 44
+2023-03-10 20:42:15,461 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,462 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,462 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,462 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 7
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] ask price 0: 146700, volume: 1010
+2023-03-10 20:42:15,517 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,518 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,518 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,518 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,584 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 28
+2023-03-10 20:42:15,584 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 28
+2023-03-10 20:42:15,587 [INFO   ] [TRADER] order 36 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:15,587 [INFO   ] [TRADER] order 39 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] received order filled for order 40 with price 147000 and volume 10
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] order 40 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 12
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,588 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,589 [INFO   ] [TRADER] received hedge filled for order 41 with average price 146900 and volume 10
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 8
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:15,831 [INFO   ] [TRADER] ask price 0: 146900, volume: 750
+2023-03-10 20:42:15,833 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:15,833 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:15,833 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:15,833 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:15,880 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 29
+2023-03-10 20:42:15,880 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 29
+2023-03-10 20:42:15,882 [INFO   ] [TRADER] order 39 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:15,882 [INFO   ] [TRADER] order 42 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:15,882 [INFO   ] [TRADER] order 43 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:16,056 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 30
+2023-03-10 20:42:16,057 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 30
+2023-03-10 20:42:16,057 [INFO   ] [TRADER] order 43 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:16,057 [INFO   ] [TRADER] order 44 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:16,323 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 31
+2023-03-10 20:42:16,323 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 31
+2023-03-10 20:42:16,323 [INFO   ] [TRADER] order 44 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:16,324 [INFO   ] [TRADER] order 45 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:16,645 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 32
+2023-03-10 20:42:16,647 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 32
+2023-03-10 20:42:16,647 [INFO   ] [TRADER] order 45 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:16,647 [INFO   ] [TRADER] order 46 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:16,880 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 33
+2023-03-10 20:42:16,880 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 33
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 34
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 34
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 13
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] bid price 0: 147000, volume: 39
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:17,060 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:17,351 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 35
+2023-03-10 20:42:17,351 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 35
+2023-03-10 20:42:17,606 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 36
+2023-03-10 20:42:17,606 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 36
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] order 42 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] order 47 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] order 46 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 14
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] bid price 0: 147000, volume: 10
+2023-03-10 20:42:17,607 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:17,608 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:17,609 [INFO   ] [TRADER] received order filled for order 48 with price 147000 and volume 10
+2023-03-10 20:42:17,609 [INFO   ] [TRADER] order 48 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:17,611 [INFO   ] [TRADER] received hedge filled for order 49 with average price 146900 and volume 10
+2023-03-10 20:42:17,749 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 15
+2023-03-10 20:42:17,749 [INFO   ] [TRADER] bid price 0: 147000, volume: 9
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] bid price 1: 146800, volume: 10
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] bid price 2: 146700, volume: 27
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:17,750 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:17,751 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:17,751 [INFO   ] [TRADER] received order filled for order 47 with price 146800 and volume 10
+2023-03-10 20:42:17,751 [INFO   ] [TRADER] order 47 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:17,752 [INFO   ] [TRADER] received hedge filled for order 50 with average price 146700 and volume 10
+2023-03-10 20:42:17,857 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 37
+2023-03-10 20:42:17,858 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 37
+2023-03-10 20:42:18,109 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 38
+2023-03-10 20:42:18,109 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 38
+2023-03-10 20:42:18,379 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 39
+2023-03-10 20:42:18,379 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 39
+2023-03-10 20:42:18,383 [INFO   ] [TRADER] received order filled for order 51 with price 146400 and volume 10
+2023-03-10 20:42:18,383 [INFO   ] [TRADER] order 51 status update: filled volume=10, remaining volume=0, status flags=293
+2023-03-10 20:42:18,383 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 16
+2023-03-10 20:42:18,383 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] ask price 0: 146400, volume: 10
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] order 52 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:18,384 [INFO   ] [TRADER] received hedge filled for order 53 with average price 146600 and volume 10
+2023-03-10 20:42:18,618 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 40
+2023-03-10 20:42:18,618 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 40
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] received order filled for order 54 with price 146400 and volume 10
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] order 54 status update: filled volume=10, remaining volume=0, status flags=293
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 17
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:18,619 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] ask price 0: 146400, volume: 10
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] order 52 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] order 55 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:18,620 [INFO   ] [TRADER] received hedge filled for order 56 with average price 146500 and volume 10
+2023-03-10 20:42:18,876 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 41
+2023-03-10 20:42:18,877 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 41
+2023-03-10 20:42:18,877 [INFO   ] [TRADER] received order filled for order 57 with price 146400 and volume 10
+2023-03-10 20:42:18,877 [INFO   ] [TRADER] order 57 status update: filled volume=10, remaining volume=0, status flags=293
+2023-03-10 20:42:18,877 [INFO   ] [TRADER] order 55 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 18
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] ask price 0: 146400, volume: 10
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] order 58 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:18,878 [INFO   ] [TRADER] received hedge filled for order 59 with average price 146600 and volume 10
+2023-03-10 20:42:19,055 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 42
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 42
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] received order filled for order 60 with price 146400 and volume 10
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] order 60 status update: filled volume=10, remaining volume=0, status flags=293
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 19
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,056 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] ask price 0: 146400, volume: 10
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] order 58 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] order 61 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:19,058 [INFO   ] [TRADER] received hedge filled for order 62 with average price 146700 and volume 10
+2023-03-10 20:42:19,326 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 43
+2023-03-10 20:42:19,327 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 43
+2023-03-10 20:42:19,327 [INFO   ] [TRADER] received order filled for order 63 with price 146400 and volume 10
+2023-03-10 20:42:19,327 [INFO   ] [TRADER] order 63 status update: filled volume=10, remaining volume=0, status flags=293
+2023-03-10 20:42:19,327 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 20
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] ask price 0: 146400, volume: 10
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,328 [INFO   ] [TRADER] received hedge filled for order 64 with average price 146800 and volume 10
+2023-03-10 20:42:19,361 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 9
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] ask price 0: 146900, volume: 1000
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,362 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 21
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] bid price 0: 146200, volume: 12
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,516 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 10
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,517 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] ask price 0: 147000, volume: 710
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,518 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 22
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] ask price 0: 146400, volume: 60
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:19,582 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,584 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,584 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,657 [INFO   ] [TRADER] received order filled for order 61 with price 146800 and volume 10
+2023-03-10 20:42:19,657 [INFO   ] [TRADER] order 61 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:19,659 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 44
+2023-03-10 20:42:19,659 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 44
+2023-03-10 20:42:19,659 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 23
+2023-03-10 20:42:19,659 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:19,659 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] ask price 0: 146800, volume: 10
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] ask price 1: 147300, volume: 23
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] received hedge filled for order 65 with average price 147200 and volume 10
+2023-03-10 20:42:19,660 [INFO   ] [TRADER] order 66 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:19,661 [INFO   ] [TRADER] order 67 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:19,855 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 45
+2023-03-10 20:42:19,855 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 45
+2023-03-10 20:42:20,105 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 46
+2023-03-10 20:42:20,105 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 46
+2023-03-10 20:42:20,343 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 47
+2023-03-10 20:42:20,343 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 47
+2023-03-10 20:42:20,344 [INFO   ] [TRADER] order 66 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:20,345 [INFO   ] [TRADER] order 68 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:20,468 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 11
+2023-03-10 20:42:20,468 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:20,468 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:20,468 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] ask price 0: 147200, volume: 1030
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:20,469 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:20,596 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 48
+2023-03-10 20:42:20,596 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 48
+2023-03-10 20:42:20,596 [INFO   ] [TRADER] received order filled for order 67 with price 147100 and volume 10
+2023-03-10 20:42:20,596 [INFO   ] [TRADER] order 67 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 24
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] ask price 0: 147100, volume: 10
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] ask price 1: 147300, volume: 22
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] ask price 2: 147400, volume: 53
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] order 68 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] order 69 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:20,597 [INFO   ] [TRADER] received hedge filled for order 70 with average price 147200 and volume 10
+2023-03-10 20:42:20,879 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 49
+2023-03-10 20:42:20,879 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 49
+2023-03-10 20:42:20,879 [INFO   ] [TRADER] order 69 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:20,880 [INFO   ] [TRADER] order 71 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:20,880 [INFO   ] [TRADER] order 72 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:21,100 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 50
+2023-03-10 20:42:21,100 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 50
+2023-03-10 20:42:21,305 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 51
+2023-03-10 20:42:21,306 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 51
+2023-03-10 20:42:21,650 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 52
+2023-03-10 20:42:21,651 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 52
+2023-03-10 20:42:21,807 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 53
+2023-03-10 20:42:21,807 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 53
+2023-03-10 20:42:21,997 [INFO   ] [TRADER] received order filled for order 71 with price 146800 and volume 10
+2023-03-10 20:42:21,997 [INFO   ] [TRADER] order 71 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 25
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] bid price 0: 146800, volume: 10
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] bid price 1: 146700, volume: 34
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:21,998 [INFO   ] [TRADER] received hedge filled for order 73 with average price 146900 and volume 10
+2023-03-10 20:42:22,095 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 54
+2023-03-10 20:42:22,097 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 54
+2023-03-10 20:42:22,380 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 55
+2023-03-10 20:42:22,380 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 55
+2023-03-10 20:42:22,614 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 56
+2023-03-10 20:42:22,614 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 56
+2023-03-10 20:42:22,616 [INFO   ] [TRADER] order 74 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:22,616 [INFO   ] [TRADER] order 72 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:22,616 [INFO   ] [TRADER] order 75 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:22,867 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 57
+2023-03-10 20:42:22,867 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 57
+2023-03-10 20:42:22,867 [INFO   ] [TRADER] order 74 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:22,868 [INFO   ] [TRADER] order 76 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:22,868 [INFO   ] [TRADER] order 75 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:22,868 [INFO   ] [TRADER] order 77 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 12
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] ask price 0: 147200, volume: 950
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:23,067 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:23,162 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 58
+2023-03-10 20:42:23,162 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 58
+2023-03-10 20:42:23,167 [INFO   ] [TRADER] order 76 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] received order filled for order 78 with price 146900 and volume 10
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] order 78 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] order 77 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] order 79 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 26
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:23,168 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] ask price 0: 146900, volume: 10
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:23,169 [INFO   ] [TRADER] received hedge filled for order 80 with average price 147000 and volume 10
+2023-03-10 20:42:23,319 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 59
+2023-03-10 20:42:23,319 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 59
+2023-03-10 20:42:23,320 [INFO   ] [TRADER] order 81 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:23,320 [INFO   ] [TRADER] order 79 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:23,320 [INFO   ] [TRADER] order 82 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:23,604 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 60
+2023-03-10 20:42:23,605 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 60
+2023-03-10 20:42:23,901 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 61
+2023-03-10 20:42:23,901 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 61
+2023-03-10 20:42:24,045 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 62
+2023-03-10 20:42:24,045 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 62
+2023-03-10 20:42:24,046 [INFO   ] [TRADER] order 82 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:24,046 [INFO   ] [TRADER] order 83 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:24,161 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 27
+2023-03-10 20:42:24,161 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:24,161 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] ask price 0: 146900, volume: 19
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,163 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 13
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] bid price 0: 146900, volume: 1000
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] bid price 1: 146800, volume: 1000
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,328 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 63
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 63
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] order 81 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] order 84 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] order 83 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:24,375 [INFO   ] [TRADER] order 85 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:24,621 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 64
+2023-03-10 20:42:24,622 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 64
+2023-03-10 20:42:24,630 [INFO   ] [TRADER] order 84 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] order 86 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 14
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] ask price 0: 146900, volume: 1010
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,631 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] received order filled for order 85 with price 146800 and volume 10
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 28
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,666 [INFO   ] [TRADER] ask price 0: 146800, volume: 10
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] ask price 1: 146900, volume: 2
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] order 85 status update: filled volume=10, remaining volume=0, status flags=-147
+2023-03-10 20:42:24,667 [INFO   ] [TRADER] received hedge filled for order 87 with average price 147100 and volume 10
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 15
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] bid price 0: 146900, volume: 2000
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,847 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,884 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 65
+2023-03-10 20:42:24,884 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 65
+2023-03-10 20:42:24,886 [INFO   ] [TRADER] order 86 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:24,886 [INFO   ] [TRADER] order 88 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:24,886 [INFO   ] [TRADER] received order filled for order 89 with price 146700 and volume 7
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 29
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] bid price 0: 146700, volume: 7
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] order 89 status update: filled volume=7, remaining volume=3, status flags=205
+2023-03-10 20:42:24,887 [INFO   ] [TRADER] received hedge filled for order 90 with average price 146800 and volume 7
+2023-03-10 20:42:25,130 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 66
+2023-03-10 20:42:25,130 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 66
+2023-03-10 20:42:25,130 [INFO   ] [TRADER] order 88 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:25,131 [INFO   ] [TRADER] order 91 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:25,131 [INFO   ] [TRADER] order 89 status update: filled volume=7, remaining volume=0, status flags=205
+2023-03-10 20:42:25,131 [INFO   ] [TRADER] order 92 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:25,376 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 67
+2023-03-10 20:42:25,377 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 67
+2023-03-10 20:42:25,377 [INFO   ] [TRADER] order 91 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:25,377 [INFO   ] [TRADER] order 93 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:25,377 [INFO   ] [TRADER] order 92 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:25,378 [INFO   ] [TRADER] order 94 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:25,595 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 68
+2023-03-10 20:42:25,595 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 68
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 16
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] bid price 0: 146900, volume: 9000
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:25,759 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:25,760 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:25,760 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:25,760 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:25,760 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:25,866 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 69
+2023-03-10 20:42:25,866 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 69
+2023-03-10 20:42:26,099 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 70
+2023-03-10 20:42:26,099 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 70
+2023-03-10 20:42:26,354 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 71
+2023-03-10 20:42:26,354 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 71
+2023-03-10 20:42:26,354 [INFO   ] [TRADER] order 93 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:26,354 [WARNING] [TRADER] error with order 95: order rejected: in cross with an existing order
+2023-03-10 20:42:26,356 [INFO   ] [TRADER] order 95 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:26,356 [INFO   ] [TRADER] order 94 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:26,356 [INFO   ] [TRADER] order 96 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:26,551 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 72
+2023-03-10 20:42:26,551 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 72
+2023-03-10 20:42:26,820 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 30
+2023-03-10 20:42:26,820 [INFO   ] [TRADER] bid price 0: 146600, volume: 65
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:26,821 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:26,866 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 73
+2023-03-10 20:42:26,866 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 73
+2023-03-10 20:42:26,870 [INFO   ] [TRADER] order 96 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:26,871 [INFO   ] [TRADER] order 97 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:27,133 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 74
+2023-03-10 20:42:27,133 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 74
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 17
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:27,248 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:27,249 [INFO   ] [TRADER] ask price 0: 147100, volume: 10
+2023-03-10 20:42:27,249 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:27,249 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:27,249 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:27,249 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:27,306 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 75
+2023-03-10 20:42:27,308 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 75
+2023-03-10 20:42:27,325 [WARNING] [TRADER] error with order 98: order rejected: in cross with an existing order
+2023-03-10 20:42:27,325 [INFO   ] [TRADER] order 98 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:27,325 [INFO   ] [TRADER] order 97 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:27,326 [INFO   ] [TRADER] order 99 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:27,651 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 76
+2023-03-10 20:42:27,651 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 76
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] received order filled for order 100 with price 146900 and volume 10
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] order 100 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 31
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:27,658 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] ask price 0: 146900, volume: 10
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:27,659 [INFO   ] [TRADER] received hedge filled for order 101 with average price 147000 and volume 10
+2023-03-10 20:42:27,863 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 77
+2023-03-10 20:42:27,863 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 77
+2023-03-10 20:42:28,096 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 78
+2023-03-10 20:42:28,096 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 78
+2023-03-10 20:42:28,323 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 18
+2023-03-10 20:42:28,323 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:28,323 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:28,323 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:28,323 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] ask price 0: 147200, volume: 1430
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:28,326 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:28,351 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 79
+2023-03-10 20:42:28,351 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 79
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] received order filled for order 102 with price 146900 and volume 10
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] order 102 status update: filled volume=10, remaining volume=0, status flags=294
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 32
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] ask price 0: 146900, volume: 10
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:28,352 [INFO   ] [TRADER] received hedge filled for order 103 with average price 147100 and volume 10
+2023-03-10 20:42:28,638 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 80
+2023-03-10 20:42:28,638 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 80
+2023-03-10 20:42:28,809 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 81
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 81
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 19
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] ask price 0: 147200, volume: 570
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:28,810 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:28,831 [WARNING] [TRADER] error with order 104: order rejected: in cross with an existing order
+2023-03-10 20:42:28,831 [INFO   ] [TRADER] order 104 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:28,833 [INFO   ] [TRADER] order 99 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:28,833 [INFO   ] [TRADER] order 105 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:29,121 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 82
+2023-03-10 20:42:29,121 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 82
+2023-03-10 20:42:29,121 [WARNING] [TRADER] error with order 106: order rejected: in cross with an existing order
+2023-03-10 20:42:29,121 [INFO   ] [TRADER] order 106 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:29,122 [INFO   ] [TRADER] order 105 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:29,122 [INFO   ] [TRADER] order 107 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:29,216 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 33
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] ask price 0: 146900, volume: 24
+2023-03-10 20:42:29,217 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:29,218 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,218 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,218 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:29,336 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 20
+2023-03-10 20:42:29,336 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] ask price 0: 147800, volume: 1000
+2023-03-10 20:42:29,337 [INFO   ] [TRADER] ask price 1: 147900, volume: 230
+2023-03-10 20:42:29,338 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,338 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,338 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:29,366 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 83
+2023-03-10 20:42:29,366 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 83
+2023-03-10 20:42:29,367 [WARNING] [TRADER] error with order 108: order rejected: in cross with an existing order
+2023-03-10 20:42:29,367 [INFO   ] [TRADER] order 108 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:29,367 [INFO   ] [TRADER] order 107 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:29,367 [INFO   ] [TRADER] order 109 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:29,537 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 34
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] ask price 0: 147000, volume: 148
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] ask price 1: 147200, volume: 52
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,538 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:29,576 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 21
+2023-03-10 20:42:29,576 [INFO   ] [TRADER] bid price 0: 147900, volume: 1000
+2023-03-10 20:42:29,576 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,577 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 84
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 84
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 35
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,578 [INFO   ] [TRADER] ask price 0: 147400, volume: 38
+2023-03-10 20:42:29,579 [INFO   ] [TRADER] ask price 1: 147500, volume: 9
+2023-03-10 20:42:29,579 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,579 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,579 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:29,819 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 85
+2023-03-10 20:42:29,819 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 85
+2023-03-10 20:42:29,921 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 22
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] ask price 0: 147900, volume: 2000
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:29,922 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:30,121 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 86
+2023-03-10 20:42:30,122 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 86
+2023-03-10 20:42:30,122 [WARNING] [TRADER] error with order 110: order rejected: in cross with an existing order
+2023-03-10 20:42:30,122 [INFO   ] [TRADER] order 110 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:30,122 [INFO   ] [TRADER] order 109 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:30,123 [INFO   ] [TRADER] order 111 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:30,308 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 87
+2023-03-10 20:42:30,308 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 87
+2023-03-10 20:42:30,634 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 88
+2023-03-10 20:42:30,634 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 88
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 23
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] ask price 0: 148000, volume: 430
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:30,807 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:30,873 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 89
+2023-03-10 20:42:30,873 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 89
+2023-03-10 20:42:30,873 [INFO   ] [TRADER] order 111 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:30,873 [INFO   ] [TRADER] order 112 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:31,121 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 90
+2023-03-10 20:42:31,122 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 90
+2023-03-10 20:42:31,123 [INFO   ] [TRADER] received order filled for order 113 with price 147700 and volume 10
+2023-03-10 20:42:31,123 [INFO   ] [TRADER] order 113 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:31,123 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 36
+2023-03-10 20:42:31,123 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:31,123 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,124 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,125 [INFO   ] [TRADER] received hedge filled for order 114 with average price 148000 and volume 10
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 24
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,162 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,163 [INFO   ] [TRADER] ask price 0: 148100, volume: 2000
+2023-03-10 20:42:31,163 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,163 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,163 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,163 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,341 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 91
+2023-03-10 20:42:31,342 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 91
+2023-03-10 20:42:31,342 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 25
+2023-03-10 20:42:31,342 [INFO   ] [TRADER] bid price 0: 148100, volume: 1000
+2023-03-10 20:42:31,342 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,342 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,343 [INFO   ] [TRADER] order 112 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:31,344 [INFO   ] [TRADER] order 115 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:31,565 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 92
+2023-03-10 20:42:31,566 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 92
+2023-03-10 20:42:31,566 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 26
+2023-03-10 20:42:31,566 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:31,566 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,566 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] ask price 0: 148200, volume: 1000
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,567 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,568 [INFO   ] [TRADER] received order filled for order 116 with price 147700 and volume 10
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] order 116 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 37
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,569 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:31,570 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,570 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,570 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,570 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,570 [INFO   ] [TRADER] received hedge filled for order 117 with average price 148100 and volume 10
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 27
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] bid price 0: 148100, volume: 1120
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,623 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 28
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] bid price 0: 148000, volume: 1480
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,784 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,847 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 93
+2023-03-10 20:42:31,847 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 93
+2023-03-10 20:42:31,853 [INFO   ] [TRADER] received order filled for order 118 with price 147700 and volume 10
+2023-03-10 20:42:31,853 [INFO   ] [TRADER] order 118 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:31,853 [INFO   ] [TRADER] order 115 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:31,853 [INFO   ] [TRADER] order 119 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 38
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:31,854 [INFO   ] [TRADER] received hedge filled for order 120 with average price 147800 and volume 10
+2023-03-10 20:42:32,086 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 94
+2023-03-10 20:42:32,087 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 94
+2023-03-10 20:42:32,087 [INFO   ] [TRADER] order 121 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:32,087 [INFO   ] [TRADER] order 119 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:32,087 [INFO   ] [TRADER] received order filled for order 122 with price 147600 and volume 10
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 39
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] bid price 0: 147600, volume: 10
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:32,088 [INFO   ] [TRADER] order 122 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:32,089 [INFO   ] [TRADER] received hedge filled for order 123 with average price 147700 and volume 10
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 29
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:32,264 [INFO   ] [TRADER] ask price 0: 147700, volume: 5000
+2023-03-10 20:42:32,265 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:32,265 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:32,265 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:32,265 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:32,337 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 95
+2023-03-10 20:42:32,337 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 95
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 30
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] bid price 0: 147700, volume: 10
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] ask price 0: 147700, volume: 1010
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:32,535 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:32,644 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 96
+2023-03-10 20:42:32,644 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 96
+2023-03-10 20:42:32,644 [INFO   ] [TRADER] order 121 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:32,645 [INFO   ] [TRADER] order 124 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:32,645 [INFO   ] [TRADER] order 125 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:32,718 [INFO   ] [TRADER] received order filled for order 124 with price 147600 and volume 10
+2023-03-10 20:42:32,718 [INFO   ] [TRADER] order 124 status update: filled volume=10, remaining volume=0, status flags=-148
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 40
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] bid price 0: 147600, volume: 16
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:32,725 [INFO   ] [TRADER] received hedge filled for order 126 with average price 147700 and volume 10
+2023-03-10 20:42:32,863 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 97
+2023-03-10 20:42:32,863 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 97
+2023-03-10 20:42:33,061 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 98
+2023-03-10 20:42:33,061 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 98
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 41
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] ask price 0: 147400, volume: 15
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:33,380 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:33,381 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:33,381 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:33,381 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 99
+2023-03-10 20:42:33,381 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 99
+2023-03-10 20:42:33,382 [WARNING] [TRADER] error with order 127: order rejected: in cross with an existing order
+2023-03-10 20:42:33,382 [INFO   ] [TRADER] order 127 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:33,383 [INFO   ] [TRADER] order 125 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:33,383 [INFO   ] [TRADER] order 128 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:33,554 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 100
+2023-03-10 20:42:33,555 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 100
+2023-03-10 20:42:33,555 [WARNING] [TRADER] error with order 129: order rejected: in cross with an existing order
+2023-03-10 20:42:33,555 [INFO   ] [TRADER] order 129 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:33,555 [INFO   ] [TRADER] order 128 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:33,556 [INFO   ] [TRADER] order 130 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:33,616 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 31
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] bid price 0: 148100, volume: 2000
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:33,617 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:33,824 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 101
+2023-03-10 20:42:33,824 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 101
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] received order filled for order 131 with price 147700 and volume 10
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] order 131 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 42
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:33,830 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:33,831 [INFO   ] [TRADER] order 130 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:33,832 [INFO   ] [TRADER] order 132 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:33,832 [INFO   ] [TRADER] received hedge filled for order 133 with average price 148200 and volume 10
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 32
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] bid price 0: 148200, volume: 3440
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,015 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,016 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,016 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,116 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 102
+2023-03-10 20:42:34,116 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 102
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 43
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] ask price 0: 147700, volume: 20
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,117 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 44
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:34,118 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] received order filled for order 134 with price 147700 and volume 10
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] order 134 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:34,119 [INFO   ] [TRADER] order 132 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:34,120 [INFO   ] [TRADER] order 135 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:34,120 [INFO   ] [TRADER] received hedge filled for order 136 with average price 148000 and volume 10
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 103
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 103
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 33
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] bid price 0: 148000, volume: 1060
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] bid price 1: 147900, volume: 10000
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,371 [INFO   ] [TRADER] ask price 0: 147900, volume: 4000
+2023-03-10 20:42:34,373 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,373 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,373 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,373 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,418 [INFO   ] [TRADER] received order filled for order 137 with price 147700 and volume 10
+2023-03-10 20:42:34,418 [INFO   ] [TRADER] order 137 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:34,418 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 45
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,419 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,420 [INFO   ] [TRADER] order 135 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:34,420 [INFO   ] [TRADER] order 138 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:34,420 [INFO   ] [TRADER] received hedge filled for order 139 with average price 147900 and volume 10
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 46
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:34,460 [INFO   ] [TRADER] ask price 0: 147700, volume: 7
+2023-03-10 20:42:34,461 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:34,461 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:34,461 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:34,461 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:34,632 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 104
+2023-03-10 20:42:34,632 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 104
+2023-03-10 20:42:34,835 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 105
+2023-03-10 20:42:34,835 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 105
+2023-03-10 20:42:35,076 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 106
+2023-03-10 20:42:35,077 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 106
+2023-03-10 20:42:35,078 [INFO   ] [TRADER] received order filled for order 140 with price 147700 and volume 10
+2023-03-10 20:42:35,078 [INFO   ] [TRADER] order 140 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 47
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:35,079 [INFO   ] [TRADER] order 138 status update: filled volume=0, remaining volume=0, status flags=0
+2023-03-10 20:42:35,080 [INFO   ] [TRADER] order 141 status update: filled volume=0, remaining volume=10, status flags=0
+2023-03-10 20:42:35,080 [INFO   ] [TRADER] received hedge filled for order 142 with average price 147800 and volume 6
+2023-03-10 20:42:35,173 [INFO   ] [TRADER] received trade ticks for instrument 0 with sequence number 34
+2023-03-10 20:42:35,173 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:35,174 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:35,174 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] ask price 0: 147900, volume: 400
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:35,175 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:35,176 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:35,286 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 48
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] bid price 0: 147400, volume: 26
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] ask price 0: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:35,287 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:35,357 [INFO   ] [TRADER] received order book for instrument 0 with sequence number 107
+2023-03-10 20:42:35,357 [INFO   ] [TRADER] received order book for instrument 1 with sequence number 107
+2023-03-10 20:42:35,363 [INFO   ] [TRADER] received order filled for order 143 with price 147700 and volume 10
+2023-03-10 20:42:35,364 [INFO   ] [TRADER] order 143 status update: filled volume=10, remaining volume=0, status flags=295
+2023-03-10 20:42:35,364 [WARNING] [TRADER] error with order 143: ETF position limit breached
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] received trade ticks for instrument 1 with sequence number 49
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] bid price 0: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] bid price 1: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] bid price 2: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] bid price 3: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] bid price 4: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] ask price 0: 147700, volume: 10
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] ask price 1: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] ask price 2: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] ask price 3: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [TRADER] ask price 4: 0, volume: 0
+2023-03-10 20:42:35,365 [INFO   ] [CONNECTION] fd=984 connection lost
+2023-03-10 20:42:35,366 [INFO   ] [APP] closing event loop
+2023-03-10 20:42:35,366 [INFO   ] [RECEIVER] connection lost

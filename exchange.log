@@ -377,3 +377,37 @@ ConnectionResetError: [WinError 10054] An existing connection was forcibly close
 2023-03-09 15:23:40,536 [INFO   ] [MATCH_EVENTS] writer thread complete after processing 461794 match events
 2023-03-09 15:23:40,538 [INFO   ] [SCORE_BOARD] writer thread complete after processing 3604 score records
 2023-03-09 15:23:40,538 [INFO   ] [APP] closing event loop
+2023-03-10 20:42:03,795 [INFO   ] [APP] exchange started with arguments={rtg.py, run, myautotrader.py}
+2023-03-10 20:42:03,795 [INFO   ] [APP] configuration={"Engine":{"MarketDataFile":"data/market_data1.csv","MarketEventInterval":0.05,"MarketOpenDelay":5.0,"MatchEventsFile":"match_events.csv","ScoreBoardFile":"score_board.csv","Speed":1.0,"TickInterval":0.25},"Execution":{"Host":"127.0.0.1","Port":12345},"Fees":{"Maker":-0.0001,"Taker":0.0002},"Hud":{"Host":"127.0.0.1","Port":12347},"Information":{"Type":"mmap","Name":"info.dat"},"Instrument":{"EtfClamp":0.002,"TickSize":1.0},"Limits":{"ActiveOrderCountLimit":10,"ActiveVolumeLimit":200,"MessageFrequencyInterval":1.0,"MessageFrequencyLimit":50,"PositionLimit":100},"Traders":{"TraderOne":"secret","TraderTwo":"secret"}}
+2023-03-10 20:42:03,795 [INFO   ] [CONTROLLER] starting the match
+2023-03-10 20:42:03,795 [INFO   ] [EXECUTION] starting execution server: host=127.0.0.1 port=12345
+2023-03-10 20:42:03,795 [INFO   ] [INFORMATION] starting information publisher: type=mmap name=info.dat
+2023-03-10 20:42:03,808 [INFO   ] [HEADS_UP] starting heads-up display server: host=127.0.0.1 port=12347
+2023-03-10 20:42:03,808 [INFO   ] [INFORMATION] information channel established
+2023-03-10 20:42:03,808 [INFO   ] [CONNECTION] fd=976 connection established: peer=127.0.0.1:59812
+2023-03-10 20:42:03,828 [INFO   ] [EXECUTION] fd=976 'TraderTwo' is ready!
+2023-03-10 20:42:05,461 [INFO   ] [CONNECTION] fd=848 connection established: peer=127.0.0.1:59813
+2023-03-10 20:42:08,849 [INFO   ] [CONTROLLER] market open
+2023-03-10 20:42:14,377 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=5.531000 client_order_id=27 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:26,354 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=17.500000 client_order_id=95 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:27,325 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=18.469000 client_order_id=98 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:28,831 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=19.984000 client_order_id=104 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:29,121 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=20.265000 client_order_id=106 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:29,367 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=20.515000 client_order_id=108 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:30,122 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=21.265000 client_order_id=110 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:33,382 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=24.531000 client_order_id=127 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:33,555 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=24.703000 client_order_id=129 message='order rejected: in cross with an existing order'
+2023-03-10 20:42:35,364 [INFO   ] [COMPETITOR] 'TraderTwo' sent error message: time=26.515000 client_order_id=143 message='ETF position limit breached'
+2023-03-10 20:42:35,364 [INFO   ] [COMPETITOR] 'TraderTwo' closing execution channel at time=26.515000
+2023-03-10 20:42:35,364 [INFO   ] [CONNECTION] fd=976 connection lost
+2023-03-10 20:43:49,783 [INFO   ] [APP] exchange started with arguments={rtg.py, run, autotrader.py}
+2023-03-10 20:43:49,787 [INFO   ] [APP] configuration={"Engine":{"MarketDataFile":"data/market_data1.csv","MarketEventInterval":0.05,"MarketOpenDelay":5.0,"MatchEventsFile":"match_events.csv","ScoreBoardFile":"score_board.csv","Speed":1.0,"TickInterval":0.25},"Execution":{"Host":"127.0.0.1","Port":12345},"Fees":{"Maker":-0.0001,"Taker":0.0002},"Hud":{"Host":"127.0.0.1","Port":12347},"Information":{"Type":"mmap","Name":"info.dat"},"Instrument":{"EtfClamp":0.002,"TickSize":1.0},"Limits":{"ActiveOrderCountLimit":10,"ActiveVolumeLimit":200,"MessageFrequencyInterval":1.0,"MessageFrequencyLimit":50,"PositionLimit":100},"Traders":{"TraderOne":"secret","TraderTwo":"secret"}}
+2023-03-10 20:43:49,788 [INFO   ] [CONTROLLER] starting the match
+2023-03-10 20:43:49,788 [INFO   ] [EXECUTION] starting execution server: host=127.0.0.1 port=12345
+2023-03-10 20:43:49,788 [INFO   ] [INFORMATION] starting information publisher: type=mmap name=info.dat
+2023-03-10 20:43:49,794 [INFO   ] [HEADS_UP] starting heads-up display server: host=127.0.0.1 port=12347
+2023-03-10 20:43:49,797 [INFO   ] [INFORMATION] information channel established
+2023-03-10 20:43:49,806 [INFO   ] [CONNECTION] fd=948 connection established: peer=127.0.0.1:59887
+2023-03-10 20:43:49,806 [INFO   ] [EXECUTION] fd=948 'TraderOne' is ready!
+2023-03-10 20:43:50,751 [INFO   ] [CONNECTION] fd=960 connection established: peer=127.0.0.1:59889
+2023-03-10 20:43:54,803 [INFO   ] [CONTROLLER] market open
