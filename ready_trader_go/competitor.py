@@ -55,13 +55,16 @@ class Competitor(ICompetitor, IOrderListener):
         self.score_board: ScoreBoardWriter = score_board
         self.sell_prices: List[int] = list()
         self.status: str = "OK"
-        self.tick_size: int = int(tick_size * 100.0)  # convert tick size to cents
-        self.unhedged_etf_lots: UnhedgedLots = unhedged_lots_factory.create(self.on_unhedged_lots_expiry)
+        # convert tick size to cents
+        self.tick_size: int = int(tick_size * 100.0)
+        self.unhedged_etf_lots: UnhedgedLots = unhedged_lots_factory.create(
+            self.on_unhedged_lots_expiry)
 
     def disconnect(self, now: float) -> None:
         """Disconnect this competitor."""
         if self.exec_connection is not None:
-            self.logger.info("'%s' closing execution channel at time=%.6f", self.name, now)
+            self.logger.info(
+                "'%s' closing execution channel at time=%.6f", self.name, now)
             self.exec_connection.close()
 
     def hard_breach(self, now: float, client_order_id: int, message: bytes) -> None:
@@ -86,37 +89,44 @@ class Competitor(ICompetitor, IOrderListener):
         if self.exec_connection is not None:
             self.exec_connection.send_order_status(order.client_order_id, order.volume - order.remaining_volume,
                                                    order.remaining_volume, order.total_fees)
-        self.match_events.amend(now, self.name, order.client_order_id, -volume_removed)
+        self.match_events.amend(
+            now, self.name, order.client_order_id, -volume_removed)
 
         self.active_volume -= volume_removed
 
         if order.remaining_volume == 0:
             del self.orders[order.client_order_id]
             if order.side == Side.BUY:
-                self.buy_prices.pop(bisect.bisect(self.buy_prices, order.price) - 1)
+                self.buy_prices.pop(bisect.bisect(
+                    self.buy_prices, order.price) - 1)
             else:
-                self.sell_prices.pop(bisect.bisect(self.sell_prices, -order.price) - 1)
+                self.sell_prices.pop(bisect.bisect(
+                    self.sell_prices, -order.price) - 1)
 
     def on_order_cancelled(self, now: float, order: Order, volume_removed: int) -> None:
         """Called when an order is cancelled."""
         if self.exec_connection is not None:
             self.exec_connection.send_order_status(order.client_order_id, order.volume - volume_removed,
                                                    order.remaining_volume, order.total_fees)
-        self.match_events.cancel(now, self.name, order.client_order_id, -volume_removed)
+        self.match_events.cancel(
+            now, self.name, order.client_order_id, -volume_removed)
 
         self.active_volume -= volume_removed
 
         del self.orders[order.client_order_id]
         if order.side == Side.BUY:
-            self.buy_prices.pop(bisect.bisect(self.buy_prices, order.price) - 1)
+            self.buy_prices.pop(bisect.bisect(
+                self.buy_prices, order.price) - 1)
         else:
-            self.sell_prices.pop(bisect.bisect(self.sell_prices, -order.price) - 1)
+            self.sell_prices.pop(bisect.bisect(
+                self.sell_prices, -order.price) - 1)
 
     def on_order_placed(self, now: float, order: Order) -> None:
         """Called when a good-for-day order is placed in the order book."""
         # Only send an order status if the order has not partially filled
         if order.volume == order.remaining_volume and self.exec_connection is not None:
-            self.exec_connection.send_order_status(order.client_order_id, 0, order.remaining_volume, order.total_fees)
+            self.exec_connection.send_order_status(
+                order.client_order_id, 0, order.remaining_volume, order.total_fees)
 
     def on_order_filled(self, now: float, order: Order, price: int, volume: int, fee: int) -> None:
         """Called when an order is partially or completely filled."""
@@ -129,20 +139,25 @@ class Competitor(ICompetitor, IOrderListener):
             else:
                 self.sell_prices.pop()
 
-        self.unhedged_etf_lots.apply_position_delta(volume if order.side == Side.BUY else -volume)
+        self.unhedged_etf_lots.apply_position_delta(
+            volume if order.side == Side.BUY else -volume)
 
-        self.match_events.fill(now, self.name, order.client_order_id, order.instrument, order.side, price, volume, fee)
-        last_traded: int = self.future_book.last_traded_price() or round(self.future_book.midpoint_price())
+        self.match_events.fill(now, self.name, order.client_order_id,
+                               order.instrument, order.side, price, volume, fee)
+        last_traded: int = self.future_book.last_traded_price() or round(
+            self.future_book.midpoint_price())
         self.account.transact(Instrument.ETF, order.side, price, volume, fee)
         self.account.update(last_traded, price)
 
         if self.exec_connection is not None:
-            self.exec_connection.send_order_filled(order.client_order_id, price, volume)
+            self.exec_connection.send_order_filled(
+                order.client_order_id, price, volume)
             self.exec_connection.send_order_status(order.client_order_id, order.volume - order.remaining_volume,
                                                    order.remaining_volume, order.total_fees)
 
         if not (-self.position_limit <= self.account.etf_position <= self.position_limit):
-            self.hard_breach(now, order.client_order_id, b"ETF position limit breached")
+            self.hard_breach(now, order.client_order_id,
+                             b"ETF position limit breached")
 
     def on_unhedged_lots_expiry(self):
         """Called when unhedged lots have been held for too long."""
@@ -151,26 +166,30 @@ class Competitor(ICompetitor, IOrderListener):
                          self.unhedged_etf_lots.relative_position)
 
         now: float = self.controller.advance_time()
-        self.hard_breach(now, 0, b"held unhedged lots for longer than the time limit")
+        self.hard_breach(
+            now, 0, b"held unhedged lots for longer than the time limit")
 
     # Message callbacks
     def on_amend_message(self, now: float, client_order_id: int, volume: int) -> None:
         """Called when an amend order request is received from the competitor."""
         if client_order_id > self.last_client_order_id:
-            self.send_error(now, client_order_id, b"out-of-order client_order_id in amend message")
+            self.send_error(now, client_order_id,
+                            b"out-of-order client_order_id in amend message")
             return
 
         if client_order_id in self.orders:
             order = self.orders[client_order_id]
             if volume > order.volume:
-                self.send_error(now, client_order_id, b"amend operation would increase order volume")
+                self.send_error(now, client_order_id,
+                                b"amend operation would increase order volume")
             else:
                 self.etf_book.amend(now, order, volume)
 
     def on_cancel_message(self, now: float, client_order_id: int) -> None:
         """Called when a cancel order request is received from the competitor."""
         if client_order_id > self.last_client_order_id:
-            self.send_error(now, client_order_id, b"out-of-order client_order_id in cancel message")
+            self.send_error(now, client_order_id,
+                            b"out-of-order client_order_id in cancel message")
             return
 
         if client_order_id in self.orders:
@@ -179,40 +198,49 @@ class Competitor(ICompetitor, IOrderListener):
     def on_hedge_message(self, now: float, client_order_id: int, side: int, price: int, volume: int) -> None:
         """Called when a hedge order request is received from the competitor."""
         if client_order_id <= self.last_client_order_id:
-            self.send_error(now, client_order_id, b"duplicate or out-of-order client_order_id")
+            self.send_error(now, client_order_id,
+                            b"duplicate or out-of-order client_order_id")
             return
 
         self.last_client_order_id = client_order_id
 
         if side != Side.BUY and side != Side.SELL:
-            self.send_error(now, client_order_id, b"%d is not a valid side" % side)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid side" % side)
             return
 
         if not (MINIMUM_BID <= price <= MAXIMUM_ASK):
-            self.send_error(now, client_order_id, b"%d is not a valid price" % price)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid price" % price)
             return
 
         if price % self.tick_size != 0:
-            self.send_error(now, client_order_id, b"price is not a multiple of tick size")
+            self.send_error(now, client_order_id,
+                            b"price is not a multiple of tick size")
             return
 
         if volume < 1:
-            self.send_error(now, client_order_id, b"%d is not a valid volume" % volume)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid volume" % volume)
             return
 
         if now == 0.0:
-            self.send_error(now, client_order_id, b"order rejected: market not yet open")
+            self.send_error(now, client_order_id,
+                            b"order rejected: market not yet open")
             return
 
         side_: Side = Side(side)
-        volume_traded, average_price = self.future_book.try_trade(side_, price, volume)
+        volume_traded, average_price = self.future_book.try_trade(
+            side_, price, volume)
         if volume_traded == 0:
             # The trade could have failed because there were no orders on the opposite side
-            best: Optional[int] = self.future_book.best_ask() if side_ == Side.BID else self.future_book.best_bid()
+            best: Optional[int] = self.future_book.best_ask(
+            ) if side_ == Side.BID else self.future_book.best_bid()
             if best is None:
                 last_traded = self.future_book.last_traded_price()
                 if last_traded is None:
-                    self.send_error(now, client_order_id, b"order rejected: cannot determine future price")
+                    self.send_error(
+                        now, client_order_id, b"order rejected: cannot determine future price")
                     return
                 if (side_ == Side.ASK and last_traded >= price) or (side_ == Side.BID and last_traded <= price):
                     average_price = last_traded
@@ -222,46 +250,56 @@ class Competitor(ICompetitor, IOrderListener):
                 self.exec_connection.send_hedge_filled(client_order_id, 0, 0)
             return
 
-        self.unhedged_etf_lots.apply_position_delta(volume if side_ == Side.BID else -volume)
+        self.unhedged_etf_lots.apply_position_delta(
+            volume if side_ == Side.BID else -volume)
         self.match_events.hedge(now, self.name, client_order_id, Instrument.FUTURE, side_, average_price,
                                 volume)
-        self.account.transact(Instrument.FUTURE, side_, average_price, volume, 0)
+        self.account.transact(Instrument.FUTURE, side_,
+                              average_price, volume, 0)
         self.account.update(self.future_book.last_traded_price() or self.future_book.midpoint_price(),
                             self.etf_book.last_traded_price() or self.etf_book.midpoint_price())
 
         if self.exec_connection is not None:
-            self.exec_connection.send_hedge_filled(client_order_id, average_price, volume)
+            self.exec_connection.send_hedge_filled(
+                client_order_id, average_price, volume)
 
         if not (-self.position_limit <= self.account.future_position <= self.position_limit):
-            self.hard_breach(now, client_order_id, b"future position limit breached")
+            self.hard_breach(now, client_order_id,
+                             b"future position limit breached")
 
     def on_insert_message(self, now: float, client_order_id: int, side: int, price: int, volume: int,
                           lifespan: int) -> None:
         """Called when an insert order request is received from the competitor."""
         if client_order_id <= self.last_client_order_id:
-            self.send_error(now, client_order_id, b"duplicate or out-of-order client_order_id")
+            self.send_error(now, client_order_id,
+                            b"duplicate or out-of-order client_order_id")
             return
 
         self.last_client_order_id = client_order_id
 
         if side != Side.BUY and side != Side.SELL:
-            self.send_error(now, client_order_id, b"%d is not a valid side" % side)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid side" % side)
             return
 
         if lifespan != Lifespan.FILL_AND_KILL and lifespan != Lifespan.GOOD_FOR_DAY:
-            self.send_error(now, client_order_id, b"%d is not a valid lifespan" % lifespan)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid lifespan" % lifespan)
             return
 
         if not (MINIMUM_BID <= price <= MAXIMUM_ASK):
-            self.send_error(now, client_order_id, b"%d is not a valid price" % price)
+            self.send_error(now, client_order_id,
+                            b"%d is not a valid price" % price)
             return
 
         if price % self.tick_size != 0:
-            self.send_error(now, client_order_id, b"price is not a multiple of tick size")
+            self.send_error(now, client_order_id,
+                            b"price is not a multiple of tick size")
             return
 
         if len(self.orders) == self.order_count_limit:
-            self.send_error(now, client_order_id, b"order rejected: active order count limit breached")
+            self.send_error(now, client_order_id,
+                            b"order rejected: active order count limit breached")
             return
 
         if volume < 1:
@@ -269,16 +307,19 @@ class Competitor(ICompetitor, IOrderListener):
             return
 
         if self.active_volume + volume > self.active_volume_limit:
-            self.send_error(now, client_order_id, b"order rejected: active order volume limit breached")
+            self.send_error(
+                now, client_order_id, b"order rejected: active order volume limit breached")
             return
 
         if now == 0.0:
-            self.send_error(now, client_order_id, b"order rejected: market not yet open")
+            self.send_error(now, client_order_id,
+                            b"order rejected: market not yet open")
             return
 
         if ((side == Side.BUY and self.sell_prices and price >= -self.sell_prices[-1])
                 or (side == Side.SELL and self.buy_prices and price <= self.buy_prices[-1])):
-            self.send_error(now, client_order_id, b"order rejected: in cross with an existing order")
+            self.send_error(now, client_order_id,
+                            b"order rejected: in cross with an existing order")
             return
 
         order = self.orders[client_order_id] = Order(client_order_id, Instrument.ETF, Lifespan(lifespan), Side(side),
@@ -295,7 +336,8 @@ class Competitor(ICompetitor, IOrderListener):
     def on_timer_tick(self, now: float, future_price: int, etf_price: int) -> None:
         """Called on each timer tick to update the auto-trader."""
         self.account.update(future_price or 0, etf_price or 0)
-        self.score_board.tick(now, self.name, self.account, etf_price, future_price, self.status)
+        self.score_board.tick(now, self.name, self.account,
+                              etf_price, future_price, self.status)
 
     def send_error(self, now: float, client_order_id: int, message: bytes) -> None:
         """Send an error message to the auto-trader and shut down the match."""
@@ -306,7 +348,8 @@ class Competitor(ICompetitor, IOrderListener):
     def send_error_and_close(self, now: float, client_order_id: int, message: bytes) -> None:
         """Send an error message to the auto-trader and shut down the match."""
         self.send_error(now, client_order_id, message)
-        self.logger.info("'%s' closing execution channel at time=%.6f", self.name, now)
+        self.logger.info(
+            "'%s' closing execution channel at time=%.6f", self.name, now)
         self.exec_connection.close()
 
 
@@ -357,7 +400,8 @@ class CompetitorManager:
         self.__competitors[name] = competitor
 
         if self.__start_time != 0.0:
-            self.__logger.warning("competitor logged in after market open: name='%s'", name)
+            self.__logger.warning(
+                "competitor logged in after market open: name='%s'", name)
 
         for callback in self.competitor_logged_in:
             callback(name)
