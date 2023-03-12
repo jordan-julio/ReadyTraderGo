@@ -51,6 +51,9 @@ class AutoTrader(BaseAutoTrader):
         self.ask_id = self.ask_price = self.bid_id = self.bid_price = self.position = 0
         self.bidprices = []
         self.askprices = []
+        self.last_order_prices = []
+        self.activeorder = 0
+        self.last_sold = 0
 
     def on_error_message(self, client_order_id: int, error_message: bytes) -> None:
         """Called when the exchange detects an error.
@@ -88,26 +91,34 @@ class AutoTrader(BaseAutoTrader):
             # Determine the desired order book depth (in this example, we will use 5 levels)
             depth = 10
             # Calculate bid and ask price trends
-            if len(self.bidprices) <= depth + 1 or len(self.askprices) <= depth + 1:
-                if (sorted(bid_prices, reverse=True)[0] == 0):
-                    return
-                if (sorted(ask_prices, reverse=True)[0] == 0):
-                    return
-                self.bidprices.append(sorted(bid_prices, reverse=True)[0])
-                self.askprices.append(sorted(ask_prices, reverse=True)[0])
+            for i in sorted(bid_prices, reverse=True):
+                if i != 0:
+                    self.bidprices.append(i)
+            for j in sorted(ask_prices, reverse=True):
+                if j != 0:
+                    self.askprices.append(j)
+            if (len(self.bidprices) <= depth*depth or len(self.askprices) <= depth*depth):
                 return
-            if (len(self.bidprices) == 12):
-                self.logger.warning(self.bidprices)
+            if (len(self.bidprices) == 101):
+                # self.logger.warning(self.bidprices)
                 self.bidprices.pop(0)
-            self.bidprices = sorted(self.bidprices, reverse=True)
-            if (len(self.askprices) == 12):
-                self.logger.warning(self.askprices)
+                self.bidprices.pop(1)
+                self.bidprices.pop(2)
+                self.bidprices.pop(3)
+                self.bidprices.pop(4)
+            if (len(self.askprices) == 101):
+                # self.logger.warning(self.askprices)
                 self.askprices.pop(0)
+                self.askprices.pop(1)
+                self.askprices.pop(2)
+                self.askprices.pop(3)
+                self.askprices.pop(4)
+            self.bidprices = sorted(self.bidprices, reverse=True)
             self.askprices = sorted(self.askprices)
             bid_prices_series = pd.Series(self.bidprices)
             ask_prices_series = pd.Series(self.askprices)
-            self.logger.warning(bid_prices_series)
-            self.logger.warning(ask_prices_series)
+            # self.logger.warning(bid_prices_series)
+            # self.logger.warning(ask_prices_series)
             # bid_trend = np.mean(
             #    self.bidprices[:depth]) - np.mean(self.bidprices[-depth:])
             # ask_trend = np.mean(
@@ -119,8 +130,8 @@ class AutoTrader(BaseAutoTrader):
             ask_trend = (sum(self.askprices[-depth:]) /
                          depth - sum(self.askprices[:depth]) / depth)
 
-            self.logger.warning(bid_trend)
-            self.logger.warning(ask_trend)
+            # self.logger.warning(bid_trend)
+            # self.logger.warning(ask_trend)
             price_adjustment = -1 * self.position * TICK_SIZE_IN_CENTS / LOT_SIZE
             # Determine the desired trade direction
             if bid_trend > 0 and ask_trend > 0:
@@ -146,26 +157,56 @@ class AutoTrader(BaseAutoTrader):
             order_size = min(bid_volumes[0], ask_volumes[0])
             # Place the order
             order_id = next(self.order_ids)
-            # if order_id != 0 and order_price not in bid_prices:
-            #    self.send_cancel_order(order_id)
-            #    order_id = 0
-            # if order_id != 0 and order_price not in ask_prices:
-            #    self.send_cancel_order(order_id)
-            #    order_id = 0
-            if order_direction == Side.BUY and self.position < POSITION_LIMIT:
-                self.logger.warning("um")
-                self.bids.add(order_id)
+            if order_direction == Side.BUY and self.activeorder == 0:
                 self.bid_id = order_id
-                # etf limit breach
-                if (self.position + order_size >= POSITION_LIMIT):
-                    order_size = (self.position + order_size) - POSITION_LIMIT
+                # Check if the current market price is at least 10% higher than the buy price
+                pricetodelete = 0
+                for i in self.last_order_prices:
+                    if ask_prices[0] >= i * 1.05 and self.activeorder == 0:
+                        # filter the amount of things in prices
+                        lenofsameprices = self.last_order_prices.count(i)
+                        pricetodelete = i
+                        self.logger.info(
+                            "order id: %d, SELL, order price: %d, %d, GFD", order_id, ask_prices[0], LOT_SIZE * lenofsameprices)
+                        self.send_insert_order(
+                            order_id, Side.SELL, ask_prices[0], LOT_SIZE * lenofsameprices, Lifespan.GOOD_FOR_DAY)
+                        self.activeorder = 1
+                        self.asks.add(order_id)
+                        self.last_order_prices = list(
+                            [x for x in self.last_order_prices if x != pricetodelete])
+                        # self.logger.info(self.last_order_prices)
+                        self.last_sold = ask_prices[0]
+                        return
+                if (self.position + LOT_SIZE > POSITION_LIMIT):
+                    order_size = (self.position + LOT_SIZE) - POSITION_LIMIT
+                    if (order_size > 0):
+                        return
+                    self.logger.info(
+                        "order id: %d, BUY, order price: %d, %d, GFD", order_id, order_price, LOT_SIZE)
+                    self.activeorder = 1
+                    self.send_insert_order(
+                        order_id, order_direction, order_price * TICK_SIZE_IN_CENTS, order_size, Lifespan.GOOD_FOR_DAY)
+                    self.last_order_prices.append(order_price)
+                    return
+                if (order_price >= self.last_sold and self.last_sold != 0):
+                    return
+                if (len(self.last_order_prices) == 0):
+                    self.last_sold = 0
+                self.logger.info(
+                    "order id: %d, BUY, order price: %d, %d, GFD", order_id, order_price, LOT_SIZE)
                 self.send_insert_order(
-                    order_id, order_direction, order_price * TICK_SIZE_IN_CENTS, order_size, Lifespan.GOOD_FOR_DAY)
+                    order_id, order_direction, order_price * TICK_SIZE_IN_CENTS, LOT_SIZE, Lifespan.GOOD_FOR_DAY)
+                self.last_order_prices.append(order_price)
+                self.bids.add(order_id)
+                self.activeorder = 1
             elif order_direction == Side.SELL and self.position > -POSITION_LIMIT:
                 self.ask_id = order_id
-                self.asks.add(order_id)
+                self.logger.info(
+                    "order id: %d, SELL, order price: %d, 10, GFD", order_id, order_price)
                 self.send_insert_order(
                     order_id, order_direction, order_price, LOT_SIZE, Lifespan.GOOD_FOR_DAY)
+                self.asks.add(order_id)
+                self.activeorder = 1
 
     def on_order_filled_message(self, client_order_id: int, price: int, volume: int) -> None:
         """Called when one of your orders is filled, partially or fully.
@@ -178,13 +219,17 @@ class AutoTrader(BaseAutoTrader):
                          price, volume)
         if client_order_id in self.bids:
             self.position += volume
-            self.logger.warning(["volme", self.position, POSITION_LIMIT])
+            # self.logger.warning(["volme", self.position, POSITION_LIMIT])
+            self.bids.remove(client_order_id)
             self.send_hedge_order(next(self.order_ids),
                                   Side.ASK, MIN_BID_NEAREST_TICK, volume)
+            self.activeorder = 0
         elif client_order_id in self.asks:
             self.position -= volume
+            self.asks.remove(client_order_id)
             self.send_hedge_order(next(self.order_ids),
                                   Side.BID, MAX_ASK_NEAREST_TICK, volume)
+            self.activeorder = 0
 
     def on_order_status_message(self, client_order_id: int, fill_volume: int, remaining_volume: int,
                                 fees: int) -> None:
