@@ -17,7 +17,7 @@
 #     <https://www.gnu.org/licenses/>.
 import asyncio
 import itertools
-
+import pandas as pd
 from typing import List
 
 from ready_trader_go import BaseAutoTrader, Instrument, Lifespan, MAXIMUM_ASK, MINIMUM_BID, Side
@@ -29,6 +29,11 @@ TICK_SIZE_IN_CENTS = 100
 MIN_BID_NEAREST_TICK = (
     MINIMUM_BID + TICK_SIZE_IN_CENTS) // TICK_SIZE_IN_CENTS * TICK_SIZE_IN_CENTS
 MAX_ASK_NEAREST_TICK = MAXIMUM_ASK // TICK_SIZE_IN_CENTS * TICK_SIZE_IN_CENTS
+PROFIT_THRESHOLD = 400.0
+STOP_LOSS = -0.03  # exit trade if loss exceeds 1%
+TAKE_PROFIT = 0.05  # exit trade if profit exceeds 2%
+MAKER_FEE = -0.01
+TAKER_FEE = 0.02
 
 
 class AutoTrader(BaseAutoTrader):
@@ -48,6 +53,13 @@ class AutoTrader(BaseAutoTrader):
         self.bids = set()
         self.asks = set()
         self.ask_id = self.ask_price = self.bid_id = self.bid_price = self.position = 0
+        self.etfbid = 0
+        self.etfask = 0
+        self.futbid = 0
+        self.futask = 0
+        self.prices = []
+        self.currAveragePrice = 0
+        self.cont = 0
 
     def on_error_message(self, client_order_id: int, error_message: bytes) -> None:
         """Called when the exchange detects an error.
@@ -70,6 +82,27 @@ class AutoTrader(BaseAutoTrader):
         self.logger.info("received hedge filled for order %d with average price %d and volume %d", client_order_id,
                          price, volume)
 
+    def detect_trend(self, prices: pd.Series, window_size: int = 10) -> int:
+        """
+        Detects the trend of a price series using a simple moving average crossover strategy.
+
+        :param prices: A Pandas Series containing the price data.
+        :param window_size: The size of the moving average window.
+        :return: The current trend ("up", "down", or "unknown").
+        """
+        # Calculate the simple moving average
+        sma = prices.rolling(window_size).mean()
+        # self.logger.warning(prices.iloc[-1] > sma.iloc[-1])
+        # self.logger.warning(sma.iloc[-1])
+        # self.logger.warning(prices.iloc[-2] <= sma.iloc[-2])
+        # Check for crossovers
+        if prices.iloc[-1] > sma.iloc[-1] and prices.iloc[-2] <= sma.iloc[-2]:
+            return 1
+        elif prices.iloc[-1] < sma.iloc[-1] and prices.iloc[-2] >= sma.iloc[-2]:
+            return 0
+
+        return 0
+
     def on_order_book_update_message(self, instrument: int, sequence_number: int, ask_prices: List[int],
                                      ask_volumes: List[int], bid_prices: List[int], bid_volumes: List[int]) -> None:
         """Called periodically to report the status of an order book.
@@ -81,34 +114,224 @@ class AutoTrader(BaseAutoTrader):
         """
         self.logger.info("received order book for instrument %d with sequence number %d", instrument,
                          sequence_number)
-        if instrument == Instrument.FUTURE:
-            price_adjustment = - \
-                (self.position // LOT_SIZE) * TICK_SIZE_IN_CENTS
-            new_bid_price = bid_prices[0] + \
-                price_adjustment if bid_prices[0] != 0 else 0
-            new_ask_price = ask_prices[0] + \
-                price_adjustment if ask_prices[0] != 0 else 0
+        if instrument == Instrument.ETF:
+            self.etfbid = bid_prices[0]
+            self.etfask = ask_prices[0]
+        elif instrument == Instrument.FUTURE:
+            self.futbid = bid_prices[0]
+            self.futask = ask_prices[0]
+        # FUTURES
+        # ETF
+        entry_price = (self.etfask + self.futbid) / 2
+        self.prices.append(entry_price)
+        self.prices = list([x for x in self.prices if x != 0])
+        # self.logger.warning(self.prices)
+        # self.logger.warning(len(self.prices))
 
-            if self.bid_id != 0 and new_bid_price not in (self.bid_price, 0):
-                self.send_cancel_order(self.bid_id)
-                self.bid_id = 0
-            if self.ask_id != 0 and new_ask_price not in (self.ask_price, 0):
-                self.send_cancel_order(self.ask_id)
-                self.ask_id = 0
+        # this is supposed to be the cut loss and stop trading when trend goes down but somehow it doesnt work
+        # if (len(self.prices) >= 16):
+        #    self.logger.info(self.prices)
+        #    trend = self.detect_trend(pd.Series(self.prices), 15)
+        #    self.prices = []
+        #    if (trend == 1):
+        #        self.cont = 0
+        #    self.logger.warning("trend: %d 1 = uptrend, 0 = odwntrend\n\n", trend)
+        #    if (trend == 0):
+        #        self.cont == 1
+        #        if (self.position > 0):
+        #            self.ask_id = next(self.order_ids)
+        #            self.ask_price = ask_prices[0] + TICK_SIZE_IN_CENTS
+        #            self.send_insert_order(self.ask_id, Side.SELL, int(self.ask_price), self.position, Lifespan.FAK)
+        #            self.asks.add(self.ask_id)
+        #            return
+        #        elif (self.position < 0):
+        #            self.bid_id = next(self.order_ids)
+        #            self.bid_price = bid_prices[0] + TICK_SIZE_IN_CENTS
+        #            self.send_insert_order(self.bid_id, Side.BUY, int(self.bid_price), -self.position, Lifespan.FAK)
+        #            self.bids.add(self.bid_id)
+        #            return
+        # self.logger.warning(len(self.prices))
+        # if (self.cont == 1):
+        #    return
+        # if (len(self.prices) > 1000):
+        #    self.prices = []
+        # if (len(self.prices) == 2):
+        #    if (self.prices[0] * 0.95 < self.prices[1]):
+        #        #sell al
+        #        if (self.position > 0):
+        #            self.ask_id = next(self.order_ids)
+        #            self.ask_price = self.prices[1] + TICK_SIZE_IN_CENTS
+        #            self.send_insert_order(self.ask_id, Side.SELL, int(self.ask_price), self.position, Lifespan.FAK)
+        #            self.prices = []
+        #            self.asks.add(self.ask_id)
+        #        return
+        if self.bid_id != 0:
+            self.send_cancel_order(self.bid_id)
+            self.bid_id = 0
+        if self.ask_id != 0:
+            self.send_cancel_order(self.ask_id)
+            self.ask_id = 0
+        # Calculate the stop-loss and take-profit prices
+        stop_loss_price = (self.currAveragePrice) * (1 +
+                                                     STOP_LOSS) + (self.currAveragePrice * (TAKER_FEE))
+        take_profit_price = (self.currAveragePrice) * (1 +
+                                                       TAKE_PROFIT) - (self.currAveragePrice * (TAKER_FEE))
+        bidorderSize = min(bid_volumes)
+        if bidorderSize > 100:
+            bidorderSize = 100
+        if self.position + bidorderSize > 100:
+            bidorderSize = 100 - self.position
+        elif self.position - bidorderSize < -100:
+            bidorderSize = self.position + 100
+        if self.position + bidorderSize < -100:
+            bidorderSize = -100 - self.position
+        elif self.position + bidorderSize > 100:
+            bidorderSize = 100 - self.position
+        askorderSize = min(ask_volumes)
+        if askorderSize > 100:
+            askorderSize = 100
+        if self.position + askorderSize > 100:
+            askorderSize = 100 - self.position
+        elif self.position - askorderSize < -100:
+            askorderSize = self.position + 100
+        if self.position + askorderSize < -100:
+            askorderSize = -100 - self.position
+        elif self.position + askorderSize > 100:
+            askorderSize = 100 - self.position
+        # self.logger.warning("%d VOLUME", bidorderSize)
+        # self.logger.warning("%d VOLUME", askorderSize)
 
-            if self.bid_id == 0 and new_bid_price != 0 and self.position < POSITION_LIMIT:
+        if instrument == Instrument.FUTURE and self.position == 0 and self.bid_id == 0:
+            # buy if position of FUTURE is 0
+            if (bidorderSize <= 0):
+                return
+            else:
+                # self.logger.info("here now")
                 self.bid_id = next(self.order_ids)
-                self.bid_price = new_bid_price
+                self.bid_price = entry_price + TICK_SIZE_IN_CENTS
                 self.send_insert_order(
-                    self.bid_id, Side.BUY, new_bid_price, LOT_SIZE, Lifespan.GOOD_FOR_DAY)
+                    self.bid_id, Side.BUY, int(entry_price + TICK_SIZE_IN_CENTS), bidorderSize, Lifespan.FAK)
                 self.bids.add(self.bid_id)
-
-            if self.ask_id == 0 and new_ask_price != 0 and self.position > -POSITION_LIMIT:
-                self.ask_id = next(self.order_ids)
-                self.ask_price = new_ask_price
-                self.send_insert_order(
-                    self.ask_id, Side.SELL, new_ask_price, LOT_SIZE, Lifespan.GOOD_FOR_DAY)
-                self.asks.add(self.ask_id)
+                self.currAveragePrice = (
+                    self.bid_price * bidorderSize) / bidorderSize
+                return
+        spread = self.etfbid - self.futask
+        # Check if stop-loss level has been reached
+        if instrument == Instrument.FUTURE:
+            if spread <= stop_loss_price and self.ask_id == 0:
+                # Exit trade at stop-loss price
+                # self.logger.info("here1")
+                if (askorderSize == 0):
+                    # self.logger.info("Position: %d", self.position)
+                    # self.logger.info("xx now")
+                    if (self.position == 100):
+                        self.ask_id = next(self.order_ids)
+                        self.ask_price = self.futask + TICK_SIZE_IN_CENTS
+                        # self.logger.info("e")
+                        self.send_insert_order(
+                            self.ask_id, Side.SELL, int(self.ask_price), LOT_SIZE, Lifespan.FAK)
+                        self.asks.add(self.ask_id)
+                    return
+                else:
+                    self.ask_id = next(self.order_ids)
+                    self.ask_price = self.futask + TICK_SIZE_IN_CENTS
+                    # self.logger.info("e")
+                    self.send_insert_order(
+                        self.ask_id, Side.SELL, int(self.ask_price), askorderSize, Lifespan.FAK)
+                    self.asks.add(self.ask_id)
+                return
+            # Check if take-profit level has been reached
+            elif spread >= take_profit_price:
+                # Exit trade at take-profit price
+                # self.logger.info("here2")
+                if (askorderSize == 0 and self.bid_id == 0):
+                    # self.logger.info("c")
+                    self.bid_id = next(self.order_ids)
+                    self.bid_price = self.etfbid + TICK_SIZE_IN_CENTS
+                    self.send_insert_order(
+                        self.bid_id, Side.BUY, int(self.bid_price), 100, Lifespan.FAK)
+                    self.bids.add(self.bid_id)
+                    self.currAveragePrice = (
+                        self.currAveragePrice + self.bid_price) / 2
+                else:
+                    if (self.ask_id != 0):
+                        return
+                    # self.logger.info("d")
+                    self.bid_id = next(self.order_ids)
+                    self.bid_price = self.etfbid + TICK_SIZE_IN_CENTS
+                    self.send_insert_order(
+                        self.ask_id, Side.BUY, int(self.ask_price), askorderSize, Lifespan.FAK)
+                    self.bids.add(self.bid_id)
+                    self.currAveragePrice = (
+                        self.currAveragePrice + self.bid_price) / 2
+                pass
+        elif instrument == Instrument.ETF:
+            if spread <= stop_loss_price:
+                # Exit trade at stop-loss price
+                # self.logger.info("here3 %d %d", self.position, bidorderSize)
+                if (bidorderSize == 0 and self.ask_id == 0):
+                    # here
+                    # self.logger.info("b")
+                    # self.logger.info("Position: %d", self.position)
+                    if (self.position == -100):
+                        self.bid_id = next(self.order_ids)
+                        self.bid_price = self.etfbid + TICK_SIZE_IN_CENTS
+                        self.send_insert_order(
+                            self.bid_id, Side.BUY, int(self.bid_price), LOT_SIZE, Lifespan.FAK)
+                        self.bids.add(self.bid_id)
+                        if (self.position >= 0):
+                            self.currAveragePrice = ((self.currAveragePrice * self.position) + (
+                                self.bid_price * LOT_SIZE)) / (self.position + LOT_SIZE)
+                        else:
+                            self.currAveragePrice = ((self.currAveragePrice * -self.position) + (
+                                self.bid_price * LOT_SIZE)) / (-self.position + LOT_SIZE)
+                    return
+                    # self.ask_id = next(self.order_ids)
+                    # self.ask_price = self.etfask + TICK_SIZE_IN_CENTS
+                    # self.send_insert_order(
+                    #    self.ask_id, Side.SELL, int(self.ask_price), 10, Lifespan.FAK)
+                    # self.asks.add(self.ask_id)
+                else:
+                    if (self.bid_id != 0):
+                        return
+                    # self.logger.warning("l;ast")
+                    self.bid_id = next(self.order_ids)
+                    self.bid_price = self.etfbid + TICK_SIZE_IN_CENTS
+                    self.send_insert_order(
+                        self.bid_id, Side.BUY, int(self.bid_price), bidorderSize, Lifespan.FAK)
+                    self.bids.add(self.bid_id)
+                    if (self.position >= 0):
+                        self.currAveragePrice = ((self.currAveragePrice * self.position) + (
+                            self.bid_price * bidorderSize)) / (self.position + bidorderSize)
+                    else:
+                        self.currAveragePrice = ((self.currAveragePrice * -self.position) + (
+                            self.bid_price * bidorderSize)) / (-self.position + bidorderSize)
+                pass
+            # Check if take-profit level has been reached
+            elif spread >= take_profit_price and self.bid_id == 0:
+                # Exit trade at take-profit price
+                # self.logger.info("here4")
+                if (bidorderSize == 0 and self.ask_id == 0):
+                    # self.logger.info("a")
+                    self.ask_id = next(self.order_ids)
+                    self.ask_price = self.etfask + TICK_SIZE_IN_CENTS
+                    self.send_insert_order(
+                        self.ask_id, Side.SELL, int(self.ask_price), 100, Lifespan.FAK)
+                    self.asks.add(self.ask_id)
+                else:
+                    # self.logger.info("sii")
+                    self.bid_id = next(self.order_ids)
+                    self.bid_price = self.etfbid + TICK_SIZE_IN_CENTS
+                    self.send_insert_order(
+                        self.bid_id, Side.BUY, int(self.bid_price), bidorderSize, Lifespan.FAK)
+                    self.bids.add(self.bid_id)
+                    if (self.position >= 0):
+                        self.currAveragePrice = ((self.currAveragePrice * self.position) + (
+                            self.bid_price * bidorderSize)) / (self.position + bidorderSize)
+                    else:
+                        self.currAveragePrice = ((self.currAveragePrice * -self.position) + (
+                            self.bid_price * bidorderSize)) / (-self.position + bidorderSize)
+                pass
 
     def on_order_filled_message(self, client_order_id: int, price: int, volume: int) -> None:
         """Called when one of your orders is filled, partially or fully.
@@ -120,10 +343,16 @@ class AutoTrader(BaseAutoTrader):
         self.logger.info("received order filled for order %d with price %d and volume %d", client_order_id,
                          price, volume)
         if client_order_id in self.bids:
+            if (self.position + volume > 100):
+                return
             self.position += volume
+            # self.logger.info("x m")
             self.send_hedge_order(next(self.order_ids),
                                   Side.ASK, MIN_BID_NEAREST_TICK, volume)
         elif client_order_id in self.asks:
+            if (self.position - volume < -100):
+                return
+            # self.logger.warning("x")
             self.position -= volume
             self.send_hedge_order(next(self.order_ids),
                                   Side.BID, MAX_ASK_NEAREST_TICK, volume)
